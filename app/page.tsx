@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import {
   CheckCircle2,
   XCircle,
@@ -10,7 +11,6 @@ import {
   MessageCircle,
   Sparkles,
   AlertCircle,
-  UtensilsCrossed,
 } from "lucide-react";
 
 const whatsappNumber =
@@ -20,27 +20,33 @@ export default function Home() {
   const whatsappBetaLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero unirme al beta de Pedido Listo")}`;
   const whatsappDemoLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero solicitar una demo de Pedido Listo")}`;
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <nav className="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <UtensilsCrossed className="h-6 w-6 text-white" />
-            </div>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/pedido-listo-logo.svg"
+              alt="Pedido Listo Logo"
+              width={40}
+              height={40}
+              className="h-10 w-10"
+            />
             <span className="text-xl font-bold text-gray-900">
               Pedido Listo
             </span>
           </div>
-          <Button asChild>
+          <Button asChild size="lg">
             <a
-              href={whatsappBetaLink}
+              href={whatsappDemoLink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Sparkles className="mr-2 h-4 w-4" />
-              Únete al beta
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Solicitar demo
             </a>
           </Button>
         </div>
@@ -49,53 +55,55 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b px-6 py-20 pt-32 sm:py-32 sm:pt-40">
         <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              Pedido Listo
-            </h1>
-            <p className="mt-6 text-2xl font-medium text-primary sm:text-2xl">
-              Pedidos claros, cocina organizada y control total de tu
-              restaurante
-            </p>
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-gray-600 sm:text-lg">
-              Termina con los errores en los pedidos, la confusión en cocina y
-              el estrés de las horas pico. Lleva tu restaurante con orden y
-              tranquilidad.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg">
-                <a
-                  href={whatsappBetaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Únete al beta gratis
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a
-                  href={whatsappDemoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Solicitar demo por WhatsApp
-                </a>
-              </Button>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="text-center lg:text-left">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
+                Pedido Listo
+              </p>
+              <h1 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Pedidos claros, cocina organizada y control total
+              </h1>
+              <p className="mt-6 text-lg text-gray-600">
+                Termina con los errores en los pedidos, la confusión en cocina y
+                el estrés de las horas pico. Lleva tu restaurante con orden y
+                tranquilidad.
+              </p>
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                <Button asChild size="lg">
+                  <a
+                    href={whatsappDemoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Solicitar demo por WhatsApp
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a
+                    href={whatsappBetaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Únete al beta gratis
+                  </a>
+                </Button>
+              </div>
             </div>
-            <div className="mt-12">
-              <div className="mx-auto max-w-4xl rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-2xl">
-                <div className="aspect-video rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  {/* Placeholder for screenshot */}
-                  <p className="text-center">
-                    Captura de pantalla principal de Pedido Listo
-                    <br />
-                    <span className="text-sm">
-                      (Coloca aquí tu imagen hero)
-                    </span>
-                  </p>
-                </div>
+            <div className="relative">
+              <div
+                className="pointer-events-none absolute inset-0 translate-y-6 rounded-[32px] bg-primary/20 blur-3xl"
+                aria-hidden
+              />
+              <div className="relative rounded-[32px] border border-white/40 bg-white shadow-2xl ring-1 ring-gray-100">
+                <Image
+                  src="/images/hero-image.png"
+                  alt="Panel de control de pedidos en Pedido Listo"
+                  width={1421}
+                  height={768}
+                  className="h-auto w-full rounded-[32px]"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -126,7 +134,7 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <AlertCircle className="h-10 w-10 text-[#0977CA]" />
+              <AlertCircle className="h-10 w-10 text-primary" />
               <h3 className="mt-4 text-lg font-semibold text-gray-900">
                 Comida desperdiciada
               </h3>
@@ -146,7 +154,7 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded-xl bg-white p-6 shadow-sm">
-              <Eye className="h-10 w-10 text-[#0977CA]" />
+              <Eye className="h-10 w-10 text-primary" />
               <h3 className="mt-4 text-lg font-semibold text-gray-900">
                 Falta de control
               </h3>
@@ -178,7 +186,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-[#0977CA]" />
+                      <CheckCircle2 className="h-6 w-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -195,7 +203,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-[#0977CA]" />
+                      <CheckCircle2 className="h-6 w-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -212,7 +220,7 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-                      <CheckCircle2 className="h-6 w-6 text-[#0977CA]" />
+                      <CheckCircle2 className="h-6 w-6 text-primary" />
                     </div>
                   </div>
                   <div>
@@ -258,7 +266,7 @@ export default function Home() {
             {/* Feature 1 */}
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               <div>
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#0977CA]">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-900">
@@ -272,19 +280,19 @@ export default function Home() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Menú digital siempre actualizado
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Observaciones claras del cliente
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Cero errores de escritura a mano
                     </span>
@@ -307,7 +315,7 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="lg:order-last">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#0977CA]">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
                   <ChefHat className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-900">
@@ -321,19 +329,19 @@ export default function Home() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Los pedidos llegan organizados por mesa
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       La cocina ve qué está pendiente y qué está listo
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Elimina demoras y confusiones
                     </span>
@@ -341,16 +349,14 @@ export default function Home() {
                 </ul>
               </div>
               <div className="rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-xl lg:order-first">
-                <div className="aspect-[4/3] rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  <p className="text-center px-4">
-                    Screenshot: Pantalla de cocina
-                    <br />
-                    con pedidos activos
-                    <br />
-                    <span className="text-sm">
-                      (Vista de órdenes en proceso)
-                    </span>
-                  </p>
+                <div className="overflow-hidden rounded-2xl bg-white">
+                  <Image
+                    src="/images/kitchen-screen.png"
+                    alt="Pantalla de cocina con pedidos activos"
+                    width={1405}
+                    height={768}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -358,7 +364,7 @@ export default function Home() {
             {/* Feature 3 */}
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               <div>
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#0977CA]">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
                   <LayoutGrid className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-900">
@@ -371,19 +377,19 @@ export default function Home() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Vista completa de todas las mesas
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Cada mesa muestra su estado actual
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Organización clara durante horas pico
                     </span>
@@ -408,7 +414,7 @@ export default function Home() {
             {/* Feature 4 */}
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="lg:order-last">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#0977CA]">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
                   <Eye className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-gray-900">
@@ -421,19 +427,19 @@ export default function Home() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Monitorea desde tu celular o tablet
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Ve qué está pasando en cada momento
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-[#0977CA] mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-primary mt-0.5" />
                     <span className="text-gray-700">
                       Tranquilidad de saber que todo fluye bien
                     </span>
@@ -515,7 +521,7 @@ export default function Home() {
           </div>
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <CheckCircle2 className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">Fácil de usar</h3>
@@ -525,7 +531,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <Sparkles className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
@@ -537,7 +543,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <MessageCircle className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
@@ -548,7 +554,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
@@ -559,7 +565,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <Clock className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
@@ -570,7 +576,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#0977CA]">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                 <Eye className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
@@ -589,7 +595,7 @@ export default function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200 sm:p-12">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-[#0865af]">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-primary-dark">
                 <Sparkles className="h-4 w-4" />
                 Versión Beta
               </div>
@@ -604,7 +610,7 @@ export default function Home() {
             </div>
             <div className="mt-10 space-y-6">
               <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-[#0977CA] mt-1" />
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">
                     Es completamente gratis
@@ -616,7 +622,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-[#0977CA] mt-1" />
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">
                     La app ya funciona
@@ -628,7 +634,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-[#0977CA] mt-1" />
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">
                     Tu opinión es importante
@@ -640,7 +646,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-[#0977CA] mt-1" />
+                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900">
                     Soporte directo
@@ -664,7 +670,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-r from-[#0977CA] to-[#0865af] px-6 py-20">
+      <section className="bg-primary px-6 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Lleva tu restaurante con orden y tranquilidad
@@ -674,26 +680,7 @@ export default function Home() {
             caos en tu restaurante.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="w-full bg-white text-lg text-[#0977CA] hover:bg-gray-100 sm:w-auto"
-            >
-              <a
-                href={whatsappBetaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Sparkles className="mr-2 h-5 w-5" />
-                Únete al beta gratis
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="w-full border-2 border-white bg-transparent text-lg text-white hover:bg-white/10 sm:w-auto"
-            >
+            <Button asChild variant="outline" size="lg">
               <a
                 href={whatsappDemoLink}
                 target="_blank"
@@ -734,7 +721,7 @@ export default function Home() {
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
             <p className="text-sm text-gray-400">
-              © 2025 Pedido Listo. Hecho en Ecuador para restaurantes
+              © {currentYear} Pedido Listo. Hecho en Ecuador para restaurantes
               ecuatorianos.
             </p>
           </div>
