@@ -35,12 +35,15 @@ export default function Home() {
               height={40}
               className="h-10 w-10"
             />
-            <span className="text-xl font-bold text-gray-900">
-              Teikio
-            </span>
+            <span className="text-xl font-bold text-gray-900">Teikio</span>
           </div>
           <div className="flex items-center gap-3">
-            <Button asChild variant="outline" size="lg">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="hidden sm:inline-flex"
+            >
               <a
                 href={whatsappDemoLink}
                 target="_blank"
@@ -508,8 +511,8 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-10 text-center text-gray-600">
-            No necesitas ser experto en tecnología. Teikio es tan simple
-            que tu equipo lo aprende en minutos.
+            No necesitas ser experto en tecnología. Teikio es tan simple que tu
+            equipo lo aprende en minutos.
           </p>
         </div>
       </section>
@@ -634,7 +637,11 @@ export default function Home() {
             Termina con los errores, el desperdicio y el caos en tu restaurante.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-blue-50">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-primary hover:bg-blue-50"
+            >
               <a href={appLink} target="_blank" rel="noopener noreferrer">
                 Ir a la app
               </a>
