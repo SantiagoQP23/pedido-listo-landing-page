@@ -17,8 +17,8 @@ const whatsappNumber =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "593987654321";
 
 export default function Home() {
-  const whatsappBetaLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero unirme al beta de Pedido Listo")}`;
-  const whatsappDemoLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero solicitar una demo de Pedido Listo")}`;
+  const appLink = process.env.NEXT_PUBLIC_APP_URL || "#";
+  const whatsappDemoLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quiero solicitar una demo de Teikio")}`;
 
   const currentYear = new Date().getFullYear();
 
@@ -29,26 +29,33 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <Image
-              src="/pedido-listo-logo.svg"
-              alt="Pedido Listo Logo"
+              src="/teikio-logo.svg"
+              alt="Teikio Logo"
               width={40}
               height={40}
               className="h-10 w-10"
             />
             <span className="text-xl font-bold text-gray-900">
-              Pedido Listo
+              Teikio
             </span>
           </div>
-          <Button asChild size="lg">
-            <a
-              href={whatsappDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Solicitar demo
-            </a>
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button asChild variant="outline" size="lg">
+              <a
+                href={whatsappDemoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Solicitar demo
+              </a>
+            </Button>
+            <Button asChild size="lg">
+              <a href={appLink} target="_blank" rel="noopener noreferrer">
+                Ir a la app
+              </a>
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -58,7 +65,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="text-center lg:text-left">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-                Pedido Listo
+                Teikio
               </p>
               <h1 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
                 Pedidos claros, cocina organizada y control total
@@ -70,22 +77,18 @@ export default function Home() {
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Button asChild size="lg">
+                  <a href={appLink} target="_blank" rel="noopener noreferrer">
+                    Ir a la app
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
                   <a
                     href={whatsappDemoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
-                    Solicitar demo por WhatsApp
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a
-                    href={whatsappBetaLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Únete al beta gratis
+                    Solicitar demo
                   </a>
                 </Button>
               </div>
@@ -98,7 +101,7 @@ export default function Home() {
               <div className="relative rounded-[32px] border border-white/40 bg-white shadow-2xl ring-1 ring-gray-100">
                 <Image
                   src="/images/hero-image.png"
-                  alt="Panel de control de pedidos en Pedido Listo"
+                  alt="Panel de control de pedidos en Teikio"
                   width={1421}
                   height={768}
                   className="h-auto w-full rounded-[32px]"
@@ -172,7 +175,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Así te ayuda Pedido Listo
+              Así te ayuda Teikio
             </h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
               Una aplicación simple que conecta a tus meseros con la cocina. Los
@@ -256,7 +259,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Qué puedes hacer con Pedido Listo
+              Qué puedes hacer con Teikio
             </h2>
             <p className="mt-4 text-lg text-gray-600">
               Todo lo que necesitas para llevar tu restaurante de forma ordenada
@@ -467,10 +470,10 @@ export default function Home() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              ¿Para quién es Pedido Listo?
+              ¿Para quién es Teikio?
             </h2>
             <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-              Pedido Listo está diseñado para{" "}
+              Teikio está diseñado para{" "}
               <strong>restaurantes pequeños y medianos en Ecuador</strong> que
               quieren llevar su negocio con más orden y menos estrés.
             </p>
@@ -505,18 +508,18 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-10 text-center text-gray-600">
-            No necesitas ser experto en tecnología. Pedido Listo es tan simple
+            No necesitas ser experto en tecnología. Teikio es tan simple
             que tu equipo lo aprende en minutos.
           </p>
         </div>
       </section>
 
-      {/* Why Pedido Listo */}
+      {/* Why Teikio */}
       <section className="bg-gray-900 px-6 py-20 text-white">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Por qué usar Pedido Listo
+              Por qué usar Teikio
             </h2>
           </div>
           <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -535,11 +538,11 @@ export default function Home() {
                 <Sparkles className="h-8 w-8" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">
-                Gratis durante el beta
+                Listo para usar hoy
               </h3>
               <p className="mt-3 text-gray-300">
-                Únete ahora sin costo y ayúdanos a mejorar la app para
-                restaurantes ecuatorianos.
+                Sin instalaciones complicadas. Tu restaurante funcionando con
+                Teikio en minutos.
               </p>
             </div>
             <div className="text-center">
@@ -590,80 +593,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Beta Section */}
+      {/* CTA Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white px-6 py-20">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200 sm:p-12">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-primary-dark">
-                <Sparkles className="h-4 w-4" />
-                Versión Beta
-              </div>
-              <h2 className="mt-8 text-3xl font-bold text-gray-900 sm:text-4xl">
-                Estamos en beta
-              </h2>
-              <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-                Pedido Listo está en fase de pruebas. Esto significa que estamos
-                mejorando la app constantemente con la ayuda de restaurantes
-                reales como el tuyo.
-              </p>
-            </div>
-            <div className="mt-10 space-y-6">
-              <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    Es completamente gratis
-                  </h3>
-                  <p className="mt-1 text-gray-600">
-                    Durante el beta no pagas nada. Solo queremos que lo pruebes
-                    y nos cuentes tu experiencia.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    La app ya funciona
-                  </h3>
-                  <p className="mt-1 text-gray-600">
-                    Mi propio restaurante la está usando todos los días.
-                    Funciona bien, solo estamos agregando mejoras.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    Tu opinión es importante
-                  </h3>
-                  <p className="mt-1 text-gray-600">
-                    Escuchamos tus sugerencias y mejoramos la app según lo que
-                    realmente necesitas en tu restaurante.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <CheckCircle2 className="h-6 w-6 flex-shrink-0 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900">
-                    Soporte directo
-                  </h3>
-                  <p className="mt-1 text-gray-600">
-                    Como somos un equipo pequeño, te atendemos personalmente por
-                    WhatsApp.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-10 rounded-xl bg-blue-50 p-6">
-              <p className="text-center text-gray-700">
-                <strong>Cupos limitados:</strong> Solo podemos dar soporte a
-                unos pocos restaurantes durante el beta. Si te interesa,
-                escríbenos pronto.
-              </p>
+          <div className="rounded-2xl bg-white p-8 shadow-xl ring-1 ring-gray-200 sm:p-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Empieza hoy
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Prueba la app directamente o solicita una demo personalizada.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild size="lg">
+                <a href={appLink} target="_blank" rel="noopener noreferrer">
+                  Ir a la app
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a
+                  href={whatsappDemoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Solicitar demo
+                </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -676,10 +631,14 @@ export default function Home() {
             Lleva tu restaurante con orden y tranquilidad
           </h2>
           <p className="mt-6 text-xl text-blue-100">
-            Únete al beta gratis y termina con los errores, el desperdicio y el
-            caos en tu restaurante.
+            Termina con los errores, el desperdicio y el caos en tu restaurante.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-blue-50">
+              <a href={appLink} target="_blank" rel="noopener noreferrer">
+                Ir a la app
+              </a>
+            </Button>
             <Button asChild variant="outline" size="lg">
               <a
                 href={whatsappDemoLink}
@@ -701,7 +660,7 @@ export default function Home() {
       <footer className="bg-gray-900 px-6 py-12">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white">Pedido Listo</h3>
+            <h3 className="text-2xl font-bold text-white">Teikio</h3>
             <p className="mt-2 text-gray-400">
               Pedidos claros, cocina organizada y control total de tu
               restaurante
@@ -721,7 +680,7 @@ export default function Home() {
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
             <p className="text-sm text-gray-400">
-              © {currentYear} Pedido Listo. Hecho en Ecuador para restaurantes
+              © {currentYear} Teikio. Hecho en Ecuador para restaurantes
               ecuatorianos.
             </p>
           </div>

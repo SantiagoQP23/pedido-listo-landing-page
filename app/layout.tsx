@@ -9,15 +9,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pedido Listo - Pedidos claros, cocina organizada",
+  title: "Teikio - Pedidos claros, cocina organizada",
   description: "Termina con los errores en los pedidos, la confusión en cocina y el estrés de las horas pico. Lleva tu restaurante con orden y tranquilidad.",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
+      { url: "/teikio-logo.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/apple-icon.svg", type: "image/svg+xml" }
+      { url: "/teikio-logo.svg", type: "image/svg+xml" }
     ]
   }
 };
