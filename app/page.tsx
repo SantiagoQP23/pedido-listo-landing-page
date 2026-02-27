@@ -244,7 +244,7 @@ export default function Home() {
             </div>
             <div className="lg:order-first">
               <Image
-                src="/images/new-order-flow.png"
+                src="/images/new-order.png"
                 alt="Crear un nuevo pedido en Teikio: el mesero selecciona platos, cantidades y observaciones"
                 width={1421}
                 height={768}
@@ -306,7 +306,7 @@ export default function Home() {
               </div>
               <div className="">
                 <Image
-                  src="/images/new-order-flow.png"
+                  src="/images/new-order.png"
                   alt="Crear un nuevo pedido en Teikio: el mesero selecciona platos, cantidades y observaciones"
                   width={1421}
                   height={768}
