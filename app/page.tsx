@@ -487,7 +487,7 @@ export default function Home() {
             </div>
             <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-6">
               <h3 className="text-xl font-semibold text-gray-900">
-                Si tienes meseros y cocina
+                Si quieres mejorar la comunicación entre meseros y cocina
               </h3>
               <p className="mt-2 text-gray-700">
                 Y estás cansado de los errores de comunicación, los pedidos mal
@@ -661,7 +661,9 @@ export default function Home() {
       <footer className="bg-gray-900 px-6 py-12">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white">Teikio</h3>
+            <h3 className="text-2xl font-bold text-white">
+              Teikio. El control que tu restaurante merece.
+            </h3>
             <p className="mt-2 text-gray-400">
               Pedidos claros, cocina organizada y control total de tu
               restaurante
@@ -680,10 +682,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
-            <p className="text-sm text-gray-400">
-              © {currentYear} Teikio. Hecho en Ecuador para restaurantes
-              ecuatorianos.
-            </p>
+            <p className="text-sm text-gray-400">© {currentYear} Teikio. </p>
           </div>
         </div>
       </footer>
