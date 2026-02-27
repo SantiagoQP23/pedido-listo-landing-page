@@ -243,15 +243,14 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:order-first">
-              <div className="rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-xl">
-                <div className="aspect-square rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  <p className="text-center">
-                    Diagrama o captura del flujo
-                    <br />
-                    <span className="text-sm">(Mesero → App → Cocina)</span>
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/images/new-order-flow.png"
+                alt="Crear un nuevo pedido en Teikio: el mesero selecciona platos, cantidades y observaciones"
+                width={1421}
+                height={768}
+                className="h-auto w-full rounded-[32px]"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -305,16 +304,15 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-xl">
-                <div className="aspect-[4/3] rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  <p className="text-center px-4">
-                    Screenshot: Pantalla de mesero
-                    <br />
-                    tomando un pedido
-                    <br />
-                    <span className="text-sm">(Vista de menú + selección)</span>
-                  </p>
-                </div>
+              <div className="">
+                <Image
+                  src="/images/new-order-flow.png"
+                  alt="Crear un nuevo pedido en Teikio: el mesero selecciona platos, cantidades y observaciones"
+                  width={1421}
+                  height={768}
+                  className="h-auto w-full rounded-[32px]"
+                  priority
+                />
               </div>
             </div>
 
@@ -402,18 +400,15 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-xl">
-                <div className="aspect-[4/3] rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  <p className="text-center px-4">
-                    Screenshot: Vista de mesas
-                    <br />
-                    con estados (ocupada/libre)
-                    <br />
-                    <span className="text-sm">
-                      (Layout visual del restaurante)
-                    </span>
-                  </p>
-                </div>
+              <div className="">
+                <Image
+                  src="/images/table-screens.png"
+                  alt="Pantalla de organización de mesas en Teikio, mostrando qué mesas están ocupadas, libres o con pedidos pendientes"
+                  width={1421}
+                  height={768}
+                  className="h-auto w-full rounded-[32px]"
+                  priority
+                />
               </div>
             </div>
 
@@ -453,15 +448,14 @@ export default function Home() {
                 </ul>
               </div>
               <div className="rounded-2xl border-4 border-gray-200 bg-gray-100 p-4 shadow-xl lg:order-first">
-                <div className="aspect-[4/3] rounded-lg bg-white flex items-center justify-center text-gray-400">
-                  <p className="text-center px-4">
-                    Screenshot: Dashboard del dueño
-                    <br />
-                    con resumen de actividad
-                    <br />
-                    <span className="text-sm">(Vista general del negocio)</span>
-                  </p>
-                </div>
+                <Image
+                  src="/images/control-screens.png"
+                  alt="Monitoreo de pedidos en tiempo real desde el celular del dueño del restaurante"
+                  width={1421}
+                  height={768}
+                  className="h-auto w-full rounded-[32px]"
+                  priority
+                />
               </div>
             </div>
           </div>
